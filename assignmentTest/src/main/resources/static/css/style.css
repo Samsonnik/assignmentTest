@@ -1,0 +1,95 @@
+.table {
+    border: 1px solid #eee;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+}
+
+.table td {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    text-align: center;
+    font-family: 'Righteous', cursive;
+}
+
+.table tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #F7F7F7;
+}
+
+img.product-tile {
+    max-width: 256px;
+}
+
+.shopHeader {
+    background: #FFF4ED;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.shopHeader h2 {
+    font-family: 'Righteous', cursive;
+    position: relative;
+    color: #3CA1D9;
+    display: inline-block;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    font-size: 3em;
+    padding: 11px 60px;
+    margin: 0;
+    line-height: 1;
+}
+
+.shopHeader h2:before, .shopHeader h2:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    background: repeating-linear-gradient(180deg, transparent, transparent 2px, #3CA1D9 2px, #3CA1D9 4px);
+}
+
+.shopHeader h2:before {
+    left: 0;
+}
+
+.shopHeader h2:after {
+    right: 0;
+}
+
+@media (max-width: 420px) {
+    .shopHeader h2 {
+        font-size: 2em;
+    }
+}
+
+.tableHeader {
+    font-family: 'Righteous', cursive;
+    position: relative;
+    color: #3CA1D9;
+    margin: 0;
+    line-height: 1;
+}
+
+
+.inputQuery {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #E0FFFF;
+    color: black;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <title>Shop</title>
+    <div class="shopHeader">
+        <h2>
+            Welcome to web store "Alibaba"
+        </h2>
+    </div>
+</head>
+<body>
+<div class="mainContent">
+    <form th:action="@{/products-store/product}">
+        <select name="query">
+            <option value="expensive">get the most expensive product</option>
+            <option value="unexpensive">get the most unexpensive product</option>
+            <option value="rate">get the highest rating product</option>
+            <input th:type="submit" th:value="send">
+        </select>
+    </form>
+    <table class="table">
+        <thead>
+        <tr class="tableHeader">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Color</th>
+            <th>Weight</th>
+            <th>Rating</th>
+            <th>Available quantity</th>
+            <th>Description</th>
+            <th>Properties</th>
+            <th>Price</th>
+            <th>Photo title</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product: ${products}">
+            <td>
+                <a th:href="@{/products-store/{id}(id=${product.getId})}">
+                    <p th:text="${product.getId}"/>
+                </a>
+            </td>
+            <td th:text="${product.getProductName()}"/>
+            <td th:text="${product.getProductBrand()}"/>
+            <td th:text="${product.getCategory()}"/>
+            <td th:text="${product.getColor()}"/>
+            <td th:text="${product.getWeight()}"/>
+            <td th:text="${product.getRating()}"/>
+            <td th:text="${product.getAvailableQuantity()}"/>
+            <td th:text="${product.getDescription()}"/>
+            <td th:text="${product.getProperties()}"/>
+            <td th:text="${product.getPrice()}"/>
+            <td>
+                <img class="product-tile" th:src="${product.getPhoto()}" width="100" height="100"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<hr/>
+</body>
+</html>

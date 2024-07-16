@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <title>Shop</title>
+    <div class="shopHeader">
+        <h2>
+            Welcome to web store "Alibaba"
+        </h2>
+    </div>
+</head>
+<body>
+<div class="mainContent">
+    <table class="table">
+        <thead>
+        <tr class="tableHeader">
+            <th>Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Color</th>
+            <th>Weight</th>
+            <th>Rating</th>
+            <th>Available quantity</th>
+            <th>Description</th>
+            <th>Properties</th>
+            <th>Price</th>
+            <th>Photo title</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${product.getId()}"/>
+            <td th:text="${product.getProductName()}"/>
+            <td th:text="${product.getProductBrand()}"/>
+            <td th:text="${product.getCategory()}"/>
+            <td th:text="${product.getColor()}"/>
+            <td th:text="${product.getWeight()}"/>
+            <td th:text="${product.getRating()}"/>
+            <td th:text="${product.getAvailableQuantity()}"/>
+            <td th:text="${product.getDescription()}"/>
+            <td th:text="${product.getProperties()}"/>
+            <td th:text="${product.getPrice()}"/>
+            <td th:each="photo: ${productPhotos}">
+                <img class="product-tile" th:src="${photo.getPhotoUrl()}" width="100" height="100"/>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<br/>
+<hr/>
+</body>
+</html>
